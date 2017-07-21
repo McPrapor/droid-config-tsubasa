@@ -1,4 +1,8 @@
-This is attempt to make SailfishOS port for Sony Xperia V (lt25 tsubasa). For now it's just a draft, but anyway it is already possible to build a working image.
+This is attempt to make SailfishOS port for Sony Xperia V (lt25 tsubasa).
+
+!!! NO WARRANTY OR SUPPORT !!!
+
+For now it's just a draft, but anyway it is already possible to build a working image.
 
 What works:
 - [x] Display
