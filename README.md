@@ -32,6 +32,8 @@ Doesn't work:
 - [ ] Sensors
 - [ ] NCF (SFOS doesn't support)
 
+It's necessary to do "make -j4 hwcomposer.msm8960" after "make -j4 hybris-hal" and copy output hwcomposer.msm8960.so to /system/lib/hw/ after cm13 firmware installation.
+
 Local manifest(may contains some unused repos) .repo/local_manifests/roomservice.xml:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
