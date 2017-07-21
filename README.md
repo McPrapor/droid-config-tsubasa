@@ -1,32 +1,32 @@
 This is attempt to make SailfishOS port for Sony Xperia V (lt25 tsubasa). For now it's just a draft, but anyway it is already possible to build a working image.
 
 What works:
-* Display
-* Touch
-* LED
-* Audio
-* GSM SMS
-* WLAN Connect
-* Keys +-
-* Vibra
-* USB net
-* USB charge
+[x] Display
+[x] Touch
+[x] LED
+[x] Audio
+[x] GSM SMS
+[x] WLAN Connect
+[x] Keys +-
+[x] Vibra
+[x] USB net
+[x] USB charge
 
 Unknown:
-* GSM voice(have broken antenna :P)
-* GSM data(same problem :P)
-* GPS didn't test yet
-* Power management(doesn't work or just have old battery?)
-* FM radio
-* RTC alarms
-* Haptics
-* WLAN hotspot
+[ ] GSM voice(have broken antenna :P)
+[ ] GSM data(same problem :P)
+[ ] GPS didn't test yet
+[ ] Power management(doesn't work or just have old battery?)
+[ ] FM radio
+[ ] RTC alarms
+[ ] Haptics
+[ ] WLAN hotspot
 
 Doesn't work:
-* Camera
-* Bluetooth
-* Sensors
-* NCF (SFOS doesn't support)
+[ ] Camera
+[ ] Bluetooth
+[ ] Sensors
+[ ] NCF (SFOS doesn't support)
 
 Local manifest(may contains some unused repos) .repo/local_manifests/roomservice.xml:
 ```xml
