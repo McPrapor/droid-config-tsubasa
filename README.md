@@ -28,9 +28,8 @@ Doesn't work:
 * Sensors
 * NCF (SFOS doesn't support)
 
-Local manifest(may contains some unused repos):
-```$ cat .repo/local_manifests/roomservice.xml
-<?xml version="1.0" encoding="UTF-8"?>
+Local manifest(may contains some unused repos) .repo/local_manifests/roomservice.xml:
+```<?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <project name="CyanogenMod/android_device_qcom_common" path="device/qcom/common" remote="github" />
   <project name="CyanogenMod/android_device_qcom_sepolicy" path="device/qcom/sepolicy" revision="stable/cm-13.0-ZNH5Y" />
