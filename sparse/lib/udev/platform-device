@@ -1,0 +1,3 @@
+#!/bin/sh
+
+RESULT=`echo "$1" | sed "s|/devices/platform/\([^/]*\)/\([^/]*\)/.*|\1/\2|g"| cut -d'/' -f1`
