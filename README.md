@@ -26,7 +26,7 @@ Doesn't work:
 * Camera
 * Bluetooth
 * Sensors
-* NFS (SFOS doesn't have support)
+* NCF (SFOS doesn't support)
 
 Local manifest(may contains some unused repos):
 ```$ cat .repo/local_manifests/roomservice.xml
