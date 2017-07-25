@@ -48,12 +48,8 @@ mkdir -p hybris/mw/droidmedia-localbuild/rpm
 cp rpm/dhd/helpers/droidmedia-localbuild.spec hybris/mw/droidmedia-localbuild/rpm/droidmedia.spec
 mv hybris/mw/droidmedia-0.0.0.tgz hybris/mw/droidmedia-localbuild
 rpm/dhd/helpers/build_packages.sh --build=hybris/mw/droidmedia-localbuild
-
-rpm/dhd/helpers/build_packages.sh --droid-hal --mw=https://github.com/sailfishos/gst-droid.git
-
-rpm/dhd/helpers/build_packages.sh --configs
+rpm/dhd/helpers/build_packages.sh
 ```
-
 Patch rpm/dhd/helpers/build_packages.sh and continue with normal build process:
 ```bash
 if (grep -q 'PLATFORM_VERSION := 6.' $ANDROID_ROOT/build/core/version_defaults.mk); then
@@ -64,7 +60,9 @@ buildmw libhybris || die
 fi
 ```
 ```bash
-rpm/dhd/helpers/build_packages.sh
+rpm/dhd/helpers/build_packages.sh --droid-hal --mw=https://github.com/sailfishos/gst-droid.git
+
+rpm/dhd/helpers/build_packages.sh --configs
 ```
 Or alternatively you can skip this patch and manually copy output hwcomposer.msm8960.so to /system/lib/hw/ after cm13 firmware installation.
 
