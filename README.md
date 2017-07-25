@@ -7,7 +7,6 @@ For now it's just a draft, but anyway it is already possible to build a working 
 What works:
 - [x] Display
 - [x] Touch
-- [x] LED
 - [x] Audio
 - [x] GSM SMS
 - [x] WLAN Connect
@@ -20,6 +19,7 @@ What works:
 Unknown:
 - [ ] GSM voice(have broken antenna :P)
 - [ ] GSM data(same problem :P)
+- [ ] GPS (never worked with any CM, maybe it is only my phone problem?)
 - [ ] Power management(WiFi drains battery)
 - [ ] FM radio
 - [ ] RTC alarms
@@ -30,7 +30,7 @@ Doesn't work:
 - [ ] Camera
 - [ ] Bluetooth(device reboots after pairing)
 - [ ] NCF (SFOS doesn't support)
-- [ ] GPS didn't test yet
+- [ ] LED (works in fact, but wants adding "ro.product.board=MSM8960" and "ro.board.platform=msm8960" to /default.prop)
 
 It's necessary to do "make -j4 hwcomposer.msm8960" after "make -j4 hybris-hal" and copy output hwcomposer.msm8960.so to /system/lib/hw/ after cm13 firmware installation. Use cm13 from this thread https://forum.xda-developers.com/xperia-t-v/v-development/rom-cyanogenmod-13-0-xperia-t3416938 
 
