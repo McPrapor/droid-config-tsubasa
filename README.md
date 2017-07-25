@@ -48,7 +48,6 @@ mkdir -p hybris/mw/droidmedia-localbuild/rpm
 cp rpm/dhd/helpers/droidmedia-localbuild.spec hybris/mw/droidmedia-localbuild/rpm/droidmedia.spec
 mv hybris/mw/droidmedia-0.0.0.tgz hybris/mw/droidmedia-localbuild
 rpm/dhd/helpers/build_packages.sh --build=hybris/mw/droidmedia-localbuild
-rpm/dhd/helpers/build_packages.sh
 ```
 Patch rpm/dhd/helpers/build_packages.sh and continue with normal build process:
 ```bash
@@ -60,6 +59,8 @@ buildmw libhybris || die
 fi
 ```
 ```bash
+rpm/dhd/helpers/build_packages.sh
+
 rpm/dhd/helpers/build_packages.sh --droid-hal --mw=https://github.com/sailfishos/gst-droid.git
 
 rpm/dhd/helpers/build_packages.sh --configs
