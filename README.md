@@ -36,7 +36,23 @@ Doesn't work:
 Use cm13 from this thread https://forum.xda-developers.com/xperia-t-v/v-development/rom-cyanogenmod-13-0-xperia-t3416938 
 
 Build:
-"make -j8 libdroidmedia minimediaservice minisfservice libcameraservice hwcomposer.msm8960 hybris-hal".
+```bash
+HABUILD_SDK
+make -j8 libdroidmedia minimediaservice minisfservice libcameraservice hwcomposer.msm8960 hybris-hal
+
+MerSDK
+cd $ANDROID_ROOT
+cd $ANDROID_ROOT
+rpm/dhd/helpers/pack_source_droidmedia-localbuild.sh
+mkdir -p hybris/mw/droidmedia-localbuild/rpm
+cp rpm/dhd/helpers/droidmedia-localbuild.spec hybris/mw/droidmedia-localbuild/rpm/droidmedia.spec
+mv hybris/mw/droidmedia-0.0.0.tgz hybris/mw/droidmedia-localbuild
+rpm/dhd/helpers/build_packages.sh --build=hybris/mw/droidmedia-localbuild
+
+rpm/dhd/helpers/build_packages.sh --droid-hal --mw=https://github.com/sailfishos/gst-droid.git
+
+rpm/dhd/helpers/build_packages.sh --configs
+```
 
 Patch rpm/dhd/helpers/build_packages.sh and continue with normal build process:
 ```bash
