@@ -14,7 +14,7 @@ What works:
 - [x] Vibra
 - [x] USB net
 - [x] USB charge
-- [x] Sensors
+- [x] Sensors (well they should work according to sensorfw status)
 
 Unknown:
 - [ ] GSM voice(have broken antenna :P)
