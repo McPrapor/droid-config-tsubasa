@@ -34,7 +34,7 @@ Doesn't work:
 
 Use cm13 from this thread https://forum.xda-developers.com/xperia-t-v/v-development/rom-cyanogenmod-13-0-xperia-t3416938 
 
-It's necessary to do "make hwcomposer.msm8960 hybris-hal". Next copy output hwcomposer.msm8960.so to /system/lib/hw/ after cm13 firmware installation or patch rpm/dhd/helpers/build_packages.sh and continue with normal build process:
+It's necessary to do "make hwcomposer.msm8960 hybris-hal". Зatch rpm/dhd/helpers/build_packages.sh and continue with normal build process:
 ```bash
 if (grep -q 'PLATFORM_VERSION := 6.' $ANDROID_ROOT/build/core/version_defaults.mk); then
 buildmw https://github.com/mlehtima/libhybris.git hardware-fix || die
@@ -43,6 +43,7 @@ else
 buildmw libhybris || die
 fi
 ```
+Or alternatively you can skip this patch and manually copy output hwcomposer.msm8960.so to /system/lib/hw/ after cm13 firmware installation.
 
 Local manifest(may contains some unused repos) .repo/local_manifests/roomservice.xml:
 ```xml
