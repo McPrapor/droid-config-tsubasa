@@ -38,10 +38,10 @@ Use cm13 from this thread https://forum.xda-developers.com/xperia-t-v/v-developm
 Build:
 ```bash
 HABUILD_SDK
+hadk ; cd $ANDROID_ROOT; source build/envsetup.sh; export USE_CCACHE=1 ; breakfast $DEVICE
 make -j8 libdroidmedia minimediaservice minisfservice libcameraservice hwcomposer.msm8960 hybris-hal
 
 MerSDK
-cd $ANDROID_ROOT
 cd $ANDROID_ROOT
 rpm/dhd/helpers/pack_source_droidmedia-localbuild.sh
 mkdir -p hybris/mw/droidmedia-localbuild/rpm
