@@ -32,7 +32,17 @@ Doesn't work:
 - [ ] NCF (SFOS doesn't support)
 - [ ] LED (works in fact, but wants adding "ro.product.board=MSM8960" and "ro.board.platform=msm8960" to /default.prop)
 
-It's necessary to do "make hwcomposer.msm8960 hybris-hal" and copy output hwcomposer.msm8960.so to /system/lib/hw/ after cm13 firmware installation. Use cm13 from this thread https://forum.xda-developers.com/xperia-t-v/v-development/rom-cyanogenmod-13-0-xperia-t3416938 
+Use cm13 from this thread https://forum.xda-developers.com/xperia-t-v/v-development/rom-cyanogenmod-13-0-xperia-t3416938 
+
+It's necessary to do "make hwcomposer.msm8960 hybris-hal". Next copy output hwcomposer.msm8960.so to /system/lib/hw/ after cm13 firmware installation or patch rpm/dhd/helpers/build_packages.sh and continue with normal build process:
+```bash
+if (grep -q 'PLATFORM_VERSION := 6.' $ANDROID_ROOT/build/core/version_defaults.mk); then
+buildmw https://github.com/mlehtima/libhybris.git hardware-fix || die
+#buildmw libhybris mm64-rpm || die
+else
+buildmw libhybris || die
+fi
+```
 
 Local manifest(may contains some unused repos) .repo/local_manifests/roomservice.xml:
 ```xml
