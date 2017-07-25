@@ -28,6 +28,7 @@ Unknown:
 
 Doesn't work:
 - [ ] Camera
+- [ ] Headset
 - [ ] Bluetooth(device reboots after pairing)
 - [ ] NCF (SFOS doesn't support)
 - [ ] LED (works in fact, but wants adding "ro.product.board=MSM8960" and "ro.board.platform=msm8960" to /default.prop)
