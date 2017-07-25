@@ -5,7 +5,7 @@ This is attempt to make SailfishOS port for Sony Xperia V (lt25 tsubasa).
 For now it's just a draft, but anyway it is already possible to build a working image.
 
 What works:
-- [x] Display
+- [x] Display(no brightness control yet)
 - [x] Touch
 - [x] Audio
 - [x] GSM SMS
@@ -14,7 +14,7 @@ What works:
 - [x] Vibra
 - [x] USB net
 - [x] USB charge
-- [x] Sensors (well they should work according to sensorfw status)
+- [x] Sensors (well they should work according to sensorfw status. Screen rotation works (: )
 
 Unknown:
 - [ ] GSM voice(have broken antenna :P)
