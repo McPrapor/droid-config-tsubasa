@@ -15,12 +15,12 @@ What works:
 - [x] Vibra
 - [x] USB net
 - [x] USB charge
+- [x] Sensors
 
 Unknown:
 - [ ] GSM voice(have broken antenna :P)
 - [ ] GSM data(same problem :P)
-- [ ] GPS didn't test yet
-- [ ] Power management(doesn't work or just have old battery?)
+- [ ] Power management(WiFi drains battery)
 - [ ] FM radio
 - [ ] RTC alarms
 - [ ] Haptics
@@ -28,11 +28,11 @@ Unknown:
 
 Doesn't work:
 - [ ] Camera
-- [ ] Bluetooth
-- [ ] Sensors
+- [ ] Bluetooth(device reboots after pairing)
 - [ ] NCF (SFOS doesn't support)
+- [ ] GPS didn't test yet
 
-It's necessary to do "make -j4 hwcomposer.msm8960" after "make -j4 hybris-hal" and copy output hwcomposer.msm8960.so to /system/lib/hw/ after cm13 firmware installation.
+It's necessary to do "make -j4 hwcomposer.msm8960" after "make -j4 hybris-hal" and copy output hwcomposer.msm8960.so to /system/lib/hw/ after cm13 firmware installation. Use cm13 from this thread https://forum.xda-developers.com/xperia-t-v/v-development/rom-cyanogenmod-13-0-xperia-t3416938 
 
 Local manifest(may contains some unused repos) .repo/local_manifests/roomservice.xml:
 ```xml
