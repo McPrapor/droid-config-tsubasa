@@ -45,7 +45,7 @@ fi
 ```
 Or alternatively you can skip this patch and manually copy output hwcomposer.msm8960.so to /system/lib/hw/ after cm13 firmware installation.
 
-Local manifest(may contains some unused repos) .repo/local_manifests/roomservice.xml:
+Local manifest(may contain some unused repos) .repo/local_manifests/roomservice.xml:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
