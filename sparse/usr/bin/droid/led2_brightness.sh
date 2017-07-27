@@ -1,6 +1,6 @@
 #!/bin/sh
 
-USLEEP="0.2";
+USLEEP="0.5";
 OL=-1;
 
 while true; do
