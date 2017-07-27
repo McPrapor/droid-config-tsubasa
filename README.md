@@ -20,7 +20,6 @@ What works:
 Unknown:
 - [ ] GSM voice(have broken antenna :P)
 - [ ] GSM data(same problem :P)
-- [ ] Power management(WiFi drains battery, screen backlight doesn't turn off completely)
 - [ ] RTC alarms
 - [ ] Haptics
 - [ ] WLAN hotspot
@@ -32,6 +31,7 @@ Doesn't work:
 - [ ] Bluetooth(device reboots after pairing)
 - [ ] NCF (SFOS doesn't support)
 - [ ] LED (works in fact, but wants adding "ro.product.board=MSM8960" and "ro.board.platform=msm8960" to /default.prop)
+- [ ] Power management(WiFi drains battery, screen backlight doesn't turn off completely)
 
 Use cm13 from this thread https://forum.xda-developers.com/xperia-t-v/v-development/rom-cyanogenmod-13-0-xperia-t3416938 
 
