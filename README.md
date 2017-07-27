@@ -21,7 +21,7 @@ Unknown:
 - [ ] GSM voice(have broken antenna :P)
 - [ ] GSM data(same problem :P)
 - [ ] RTC alarms
-- [ ] Haptics
+- [ ] Haptics(or it's same as touch?)
 - [ ] WLAN hotspot
 
 Doesn't work:
