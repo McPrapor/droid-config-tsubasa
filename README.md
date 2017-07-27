@@ -62,7 +62,7 @@ fi
 ```bash
 rpm/dhd/helpers/build_packages.sh
 
-rpm/dhd/helpers/build_packages.sh --droid-hal --mw=https://github.com/sailfishos/gst-droid.git
+rpm/dhd/helpers/build_packages.sh --mw=https://github.com/sailfishos/gst-droid.git
 
 rpm/dhd/helpers/build_packages.sh --configs
 ```
@@ -107,9 +107,9 @@ Local manifest(may contain some unused repos) .repo/local_manifests/roomservice.
   <project name="platform/external/sfntly" path="external/sfntly" remote="aosp" revision="refs/tags/android-6.0.1_r79"/>
 
   <remove-project name="mer-hybris/hybris-boot"/>
-  <remove-project name="mer-hybris/android_system_core"/>
+<!--  <remove-project name="mer-hybris/android_system_core"/> -->
   <project name="McPrapor/hybris-boot" path="hybris/hybris-boot" revision="master" />
-  <project name="McPrapor/android_system_core" path="system/core" groups="pdk" revision="hybris-13.0" />
+<!--  <project name="McPrapor/android_system_core" path="system/core" groups="pdk" revision="hybris-13.0" /> -->
   <project name="McPrapor/droid-hal-tsubasa" path="rpm/" revision="master" />
   <project name="McPrapor/droid-config-tsubasa" path="hybris/droid-configs" revision="master" />
   <project name="McPrapor/droid-hal-version-tsubasa" path="hybris/droid-hal-version-tsubasa" revision="master" />
