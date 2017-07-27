@@ -14,28 +14,43 @@ What works:
 - [x] Vibra
 - [x] USB net
 - [x] USB charge
-- [x] Sensors (well they should work according to sensorfw status)
+- [x] Sensors (well they should work according to sensorfw status. Screen rotation works (: )
+- [x] Headset
+- [x] FM radio(echo 1 > /sys/module/radio_iris_transport/parameters/fmsmd_set - every time before radio use ; /system/bin/fm_qsoc_patches 199217 0 - once on boot; https://github.com/kimmoli/sfos-onyx-issues/issues/36 )
+- [x] LED (wants adding "ro.product.board=MSM8960" and "ro.board.platform=msm8960" to /default.prop)
 
 Unknown:
-- [ ] GSM voice(have broken antenna :P)
+- [ ] GSM voice(broke the antenna, so can't test)
 - [ ] GSM data(same problem :P)
-- [ ] GPS (never worked with any CM, maybe it is only my phone problem?)
-- [ ] Power management(WiFi drains battery)
-- [ ] FM radio
 - [ ] RTC alarms
-- [ ] Haptics
+- [ ] Haptics(or it's same as touch?)
 - [ ] WLAN hotspot
+- [ ] Power management(WiFi drains battery or just old battery?)
 
 Doesn't work:
 - [ ] Camera
-- [ ] Headset
+- [ ] GPS (never worked with any CM, maybe it is only my phone problem? anyway test_gps returns segfault in last builds)
 - [ ] Bluetooth(device reboots after pairing)
-- [ ] NCF (SFOS doesn't support)
-- [ ] LED (works in fact, but wants adding "ro.product.board=MSM8960" and "ro.board.platform=msm8960" to /default.prop)
+- [ ] Codecs(so no video or audio playback )
+- [ ] NCF (No support in SailfishOS)
 
 Use cm13 from this thread https://forum.xda-developers.com/xperia-t-v/v-development/rom-cyanogenmod-13-0-xperia-t3416938 
 
-It's necessary to do "make hwcomposer.msm8960 hybris-hal". Зatch rpm/dhd/helpers/build_packages.sh and continue with normal build process:
+Build:
+```bash
+HABUILD_SDK
+hadk ; cd $ANDROID_ROOT; source build/envsetup.sh; export USE_CCACHE=1 ; breakfast $DEVICE
+make -j8 libdroidmedia minimediaservice minisfservice libcameraservice hwcomposer.msm8960 hybris-hal
+
+MerSDK
+cd $ANDROID_ROOT
+rpm/dhd/helpers/pack_source_droidmedia-localbuild.sh
+mkdir -p hybris/mw/droidmedia-localbuild/rpm
+cp rpm/dhd/helpers/droidmedia-localbuild.spec hybris/mw/droidmedia-localbuild/rpm/droidmedia.spec
+mv hybris/mw/droidmedia-0.0.0.tgz hybris/mw/droidmedia-localbuild
+rpm/dhd/helpers/build_packages.sh --build=hybris/mw/droidmedia-localbuild
+```
+Patch rpm/dhd/helpers/build_packages.sh and continue with normal build process:
 ```bash
 if (grep -q 'PLATFORM_VERSION := 6.' $ANDROID_ROOT/build/core/version_defaults.mk); then
 buildmw https://github.com/mlehtima/libhybris.git hardware-fix || die
@@ -43,6 +58,13 @@ buildmw https://github.com/mlehtima/libhybris.git hardware-fix || die
 else
 buildmw libhybris || die
 fi
+```
+```bash
+rpm/dhd/helpers/build_packages.sh
+
+rpm/dhd/helpers/build_packages.sh --droid-hal --mw=https://github.com/sailfishos/gst-droid.git
+
+rpm/dhd/helpers/build_packages.sh --configs
 ```
 Or alternatively you can skip this patch and manually copy output hwcomposer.msm8960.so to /system/lib/hw/ after cm13 firmware installation.
 
@@ -92,22 +114,4 @@ Local manifest(may contain some unused repos) .repo/local_manifests/roomservice.
   <project name="McPrapor/droid-config-tsubasa" path="hybris/droid-configs" revision="master" />
   <project name="McPrapor/droid-hal-version-tsubasa" path="hybris/droid-hal-version-tsubasa" revision="master" />
 </manifest>
-```
-Current hybris/droid-configs/rpm/droid-config-tsubasa.spec:
-```spec
-# These and other macros are documented in
-# ../droid-configs-device/droid-configs.inc
-%define device tsubasa
-%define vendor sony
-%define vendor_pretty SONY
-%define device_pretty Xperia V
-%define dcd_path ./
-# Adjust this for your device
-%define pixel_ratio 1.25
-# We assume most devices will
-%define have_modem 1
-
-%define community_adaptation 1
-
-%include droid-configs-device/droid-configs.inc
 ```
