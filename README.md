@@ -40,7 +40,7 @@ Build:
 ```bash
 HABUILD_SDK
 hadk ; cd $ANDROID_ROOT; source build/envsetup.sh; export USE_CCACHE=1 ; breakfast $DEVICE
-make -j8 libdroidmedia minimediaservice minisfservice libcameraservice hwcomposer.msm8960 hybris-hal
+make -j8 libdroidmedia minimediaservice minisfservice libcameraservice hwcomposer.msm8960 libMPU3050 hybris-hal
 
 MerSDK
 cd $ANDROID_ROOT
