@@ -5,7 +5,7 @@ This is attempt to make SailfishOS port for Sony Xperia V (lt25 tsubasa).
 For now it's just a draft, but anyway it is already possible to build a working image.
 
 What works:
-- [x] Display(no brightness control yet)
+- [x] Display
 - [x] Touch
 - [x] Audio
 - [x] GSM SMS
@@ -17,6 +17,7 @@ What works:
 - [x] Sensors (well they should work according to sensorfw status. Screen rotation works (: )
 - [x] Headset
 - [x] FM radio(echo 1 > /sys/module/radio_iris_transport/parameters/fmsmd_set - every time before radio use ; /system/bin/fm_qsoc_patches 199217 0 - once on boot; https://github.com/kimmoli/sfos-onyx-issues/issues/36 )
+- [x] LED (wants adding "ro.product.board=MSM8960" and "ro.board.platform=msm8960" to /default.prop)
 
 Unknown:
 - [ ] GSM voice(broke the antenna, so can't test)
@@ -24,14 +25,14 @@ Unknown:
 - [ ] RTC alarms
 - [ ] Haptics(or it's same as touch?)
 - [ ] WLAN hotspot
+- [ ] Power management(WiFi drains battery or just old battery?)
 
 Doesn't work:
-- [ ] Camera(minimedia and minisf are failing to start)
+- [ ] Camera
 - [ ] GPS (never worked with any CM, maybe it is only my phone problem? anyway test_gps returns segfault in last builds)
 - [ ] Bluetooth(device reboots after pairing)
-- [ ] NCF (SFOS doesn't support)
-- [ ] LED (works in fact, but wants adding "ro.product.board=MSM8960" and "ro.board.platform=msm8960" to /default.prop)
-- [ ] Power management(WiFi drains battery, screen backlight doesn't turn off completely)
+- [ ] Codecs(so no video or audio playback )
+- [ ] NCF (No support in SailfishOS)
 
 Use cm13 from this thread https://forum.xda-developers.com/xperia-t-v/v-development/rom-cyanogenmod-13-0-xperia-t3416938 
 
