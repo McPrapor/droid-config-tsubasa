@@ -16,7 +16,7 @@ What works:
 - [x] USB charge
 - [x] Sensors (well they should work according to sensorfw status. Screen rotation works (: )
 - [x] Headset
-- [x] FM radio(echo 1 > /sys/module/radio_iris_transport/parameters/fmsmd_set - every time before radio use ; /system/bin/fm_qsoc_patches 199217 0 - once on boot; https://github.com/kimmoli/sfos-onyx-issues/issues/36 )
+- [x] FM radio(echo 1 > /sys/module/radio_iris_transport/parameters/fmsmd_set - every time before radio use ; /system/bin/fm_qsoc_patches 199217 0 - once on boot; https://github.com/kimmoli/sfos-onyx-issues/issues/36 - toggle loudspeaker to fix pulseaudio routing)
 - [x] LED (wants adding "ro.product.board=MSM8960" and "ro.board.platform=msm8960" to /default.prop)
 
 Unknown:
