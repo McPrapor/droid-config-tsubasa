@@ -6,7 +6,7 @@
 %define device_pretty Xperia V
 %define dcd_path ./
 # Adjust this for your device
-%define pixel_ratio 1.25
+%define pixel_ratio 1.35
 # We assume most devices will
 %define have_modem 1
 
