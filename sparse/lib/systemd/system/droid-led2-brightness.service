@@ -1,0 +1,10 @@
+[Unit]
+Description=Hack to make LED2 brightness same as LED1 controlled by MCE
+After=droid-late-start.target
+
+[Service]
+Type=simple
+ExecStart=/bin/sh /usr/bin/droid/led2_brightness.sh
+
+[Install]
+#WantedBy=mce.service
