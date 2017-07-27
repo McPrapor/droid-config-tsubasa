@@ -20,15 +20,15 @@ What works:
 Unknown:
 - [ ] GSM voice(have broken antenna :P)
 - [ ] GSM data(same problem :P)
-- [ ] GPS (never worked with any CM, maybe it is only my phone problem?)
 - [ ] Power management(WiFi drains battery, screen backlight doesn't turn off completely)
-- [ ] FM radio(echo 1 > /sys/module/radio_iris_transport/parameters/fmsmd_set ; /system/bin/fm_qsoc_patches 199217 0 - and it looks fine, but pulseaudio is broken somehow and no sound)
 - [ ] RTC alarms
 - [ ] Haptics
 - [ ] WLAN hotspot
 
 Doesn't work:
-- [ ] Camera
+- [ ] Camera(minimedia and minisf are failing to start)
+- [ ] GPS (never worked with any CM, maybe it is only my phone problem? anyway test_gps returns segfault in last builds)
+- [ ] FM radio(echo 1 > /sys/module/radio_iris_transport/parameters/fmsmd_set ; /system/bin/fm_qsoc_patches 199217 0 - and it looks fine, but pulseaudio is broken somehow and no sound)
 - [ ] Bluetooth(device reboots after pairing)
 - [ ] NCF (SFOS doesn't support)
 - [ ] LED (works in fact, but wants adding "ro.product.board=MSM8960" and "ro.board.platform=msm8960" to /default.prop)
