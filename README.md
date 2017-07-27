@@ -19,7 +19,7 @@ What works:
 - [x] FM radio(echo 1 > /sys/module/radio_iris_transport/parameters/fmsmd_set - every time before radio use ; /system/bin/fm_qsoc_patches 199217 0 - once on boot; https://github.com/kimmoli/sfos-onyx-issues/issues/36 )
 
 Unknown:
-- [ ] GSM voice(have broken antenna :P)
+- [ ] GSM voice(broke the antenna, so can't test)
 - [ ] GSM data(same problem :P)
 - [ ] RTC alarms
 - [ ] Haptics(or it's same as touch?)
