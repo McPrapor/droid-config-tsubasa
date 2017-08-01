@@ -17,7 +17,7 @@ What works:
 - [x] Sensors (well they should work according to sensorfw status. Screen rotation works (: )
 - [x] Headset
 - [x] FM radio(echo 1 > /sys/module/radio_iris_transport/parameters/fmsmd_set - every time before radio use ; /system/bin/fm_qsoc_patches 199217 0 - once on boot; https://github.com/kimmoli/sfos-onyx-issues/issues/36 - toggle loudspeaker to fix pulseaudio routing)
-- [x] LED (wants adding "ro.product.board=MSM8960" and "ro.board.platform=msm8960" to /default.prop)
+- [x] LED
 
 Unknown:
 - [ ] GSM voice(broke the antenna, so can't test)
@@ -29,7 +29,7 @@ Unknown:
 
 Doesn't work:
 - [ ] Camera
-- [ ] GPS (never worked with any CM, maybe it is only my phone problem? anyway test_gps returns segfault in last builds)
+- [ ] GPS (never worked with any CM, maybe it is only my phone problem? test_gps works, but gpsinfo shows nothing)
 - [ ] Bluetooth(device reboots after pairing)
 - [ ] Codecs(so no video or audio playback )
 - [ ] NCF (No support in SailfishOS)
