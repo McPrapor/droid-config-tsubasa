@@ -25,7 +25,7 @@ Unknown:
 - [ ] RTC alarms
 - [ ] Haptics(or it's same as touch?)
 - [ ] WLAN hotspot
-- [ ] Power management(WiFi drains battery or just old battery?)
+- [ ] Power management(WiFi drains battery or it's simply old? :D)
 
 Doesn't work:
 - [ ] Camera
