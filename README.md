@@ -114,4 +114,4 @@ Local manifest(may contain some unused repos) .repo/local_manifests/roomservice.
   <project name="McPrapor/droid-config-tsubasa" path="hybris/droid-configs" revision="master" />
   <project name="McPrapor/droid-hal-version-tsubasa" path="hybris/droid-hal-version-tsubasa" revision="master" />
 </manifest>
-```
+``` 
