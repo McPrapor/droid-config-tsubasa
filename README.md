@@ -18,6 +18,7 @@ What works:
 - [x] Headset
 - [x] FM radio(echo 1 > /sys/module/radio_iris_transport/parameters/fmsmd_set - every time before radio use ; /system/bin/fm_qsoc_patches 199217 0 - once on boot; https://github.com/kimmoli/sfos-onyx-issues/issues/36 - toggle loudspeaker to fix pulseaudio routing)
 - [x] LED
+- [x] GPS (go outdoor and don't forget to enable it in settings (: )
 
 Unknown:
 - [ ] GSM voice(broke the antenna, so can't test)
@@ -29,10 +30,9 @@ Unknown:
 
 Doesn't work:
 - [ ] Camera
-- [ ] GPS (never worked with any CM, maybe it is only my phone problem? test_gps works, but gpsinfo shows nothing)
 - [ ] Bluetooth(device reboots after pairing)
-- [ ] Codecs(so no video or audio playback )
-- [ ] NCF (No support in SailfishOS)
+- [ ] Codecs(local playback is ok, but no picture in browser, only sound)
+- [ ] NFC (No support in SailfishOS)
 
 Use cm13 from this thread https://forum.xda-developers.com/xperia-t-v/v-development/rom-cyanogenmod-13-0-xperia-t3416938 
 
